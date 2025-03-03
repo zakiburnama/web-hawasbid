@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Informasi Pengadilan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            background-color: seagreen; /* Light gray background */
+            transform: scale(1.05); /* Slight zoom effect */
+            transition: 0.3s ease-in-out;
+            color: snow;
+        }
+
+        .parallax {
+            background: url('https://images.unsplash.com/photo-1525218367148-3db3c4f2efac?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover fixed;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .section {
+            padding: 80px 0;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* .section:nth-child(odd) {
+            background: rgba(0, 123, 255, 0.5);
+        } */
+
+        .section:nth-child(even) {
+            /* background: rgba(40, 167, 69, 0.8); */
+            background: seagreen;
+        }
+
+        h1,h2,h3,h4 {
+            color: white; 
+            text-shadow: 2px 2px rgb(0, 0, 0); 
+            text-align: center;
+        }
+
+        .text-event {
+            color: black;
+            text-shadow: 2px 2px rgb(190, 190, 190); 
+        }
+
+        .judges-section {
+            background-color: #f8f5f0; /* Light beige background */
+        }
+
+        .judge-card {
+            background-color: black;
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .judge-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid gold;
+            margin-bottom: 15px;
+        }
+
+        .judge-card h5 {
+            font-weight: bold;
+        }
+
+        .judge-card:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg"> -->
+        <div class="container">
+            <a class="navbar-brand text-success" href="#">
+                <!-- <i class="fa-solid fa-landmark-dome"></i> -->
+                <i class="fa-solid fa-landmark"></i>
+                <!-- <i class="fas fa-balance-scale"></i> -->
+                <b>POSBAKUM</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#perdata">Perdata</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pidana">Pidana</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#advokat">Advokat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#administrasi">Administrasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pengaduan">Pengaduan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section with Parallax -->
+    <header class="parallax">
+        <div>
+            <!-- <h1>POSBAKUM</h1> -->
+            <h3>Portal Informasi Pos Bantuan Hukum Pengadilan Negeri Pasaman Barat</h3>
+            <div class="input-group search-bar mt-auto">
+                <input type="text" class="form-control" placeholder="Cari informasi...">
+                <button class="btn btn-success">Search</button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Service Section -->
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col-md-4">
+                <a href="#perdata" class="text-decoration-none text-dark">
+                    <div class="card p-3 shadow-sm d-flex flex-row align-items-center">
+                        <i class="fa-solid fa-gavel fa-2x me-3 mt-0"></i>
+                        <div>
+                            <h5>Perdata</h5>
+                            <p>Informasi tentang perkara perdata.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#pidana" class="text-decoration-none text-dark">
+                    <div class="card p-3 shadow-sm d-flex flex-row align-items-center">
+                        <i class="fa-solid fa-balance-scale fa-2x me-3 mt-0"></i>
+                        <div>
+                            <h5>Pidana</h5>
+                            <p>Proses perkara pidana.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#advokat" class="text-decoration-none text-dark">
+                    <div class="card p-3 shadow-sm d-flex flex-row align-items-center">
+                        <i class="fa-solid fa-user-tie fa-2x me-3 mt-0"></i>
+                        <div>
+                            <h5>Advokat</h5>
+                            <p>Daftar advokat terdaftar.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#administrasi" class="text-decoration-none text-dark">
+                    <div class="card p-3 shadow-sm d-flex flex-row align-items-center">
+                        <i class="fa-solid fa-file-alt fa-2x me-3 mt-0"></i>
+                        <div>
+                            <h5>Administrasi</h5>
+                            <p>Prosedur administrasi pengadilan.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#pengaduan" class="text-decoration-none text-dark">
+                    <div class="card p-3 shadow-sm d-flex flex-row align-items-center">
+                        <i class="fa-solid fa-exclamation-circle fa-2x me-3 mt-0"></i>
+                        <div>
+                            <h5>Pengaduan</h5>
+                            <p>Laporkan keluhan atau aduan.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#faq" class="text-decoration-none text-dark">
+                    <div class="card p-3 shadow-sm d-flex flex-row align-items-center">
+                        <i class="fa-solid fa-question-circle fa-2x me-3 mt-0"></i>
+                        <div>
+                            <h5>FAQ</h5>
+                            <p>Pertanyaan dan jawaban seputar pengadilan.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Perdata Section -->
+    <section id="perdata" class="section py-5 mt-5">
+        <div class="container">
+            <h2 class="text-center">Perdata</h2>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <h4 class="text-center">Gugatan</h4>
+                    <div class="list-group mt-3">
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Surat Kuasa</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Surat Gugatan</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Gugatan Rekonvensi</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Gugatan Intervensi</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Gugatan Perwakilan Kelompok</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Surat Keberatan/Eksepsi</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Kesepakatan Perdamaian</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Jawaban atas Gugatan</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Replik</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Duplik</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Menganalisa Alat Bukti</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Kesimpulan Akhir</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Memori Banding</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Memori Kasasi</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Memori Peninjauan Kembali</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-center">Permohonan</h4>
+                    <div class="list-group mt-3">
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Wali</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Pengampuan</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Dispensasi Nikah</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Izin Nikah</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pembatalan Perkawinan</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Anak</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Untuk Memperbaiki Kesalahan dalam Akta Catatan Sipil</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Penetapan atas penunjukan Wasit</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Agar Seseorang Dinyatakan Tidak Hadir/Meninggal</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Agar Ditetapkan Sebagai
+                            Wakil/Kuasa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pidana Section -->
+    <section id="pidana" class="py-5">
+        <div class="container">
+            <h2 class="text-event">Dokumen Pidana</h2>
+            <div class="list-group mt-5">
+                <a href="templates/surat_keberatan.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Surat Keberatan/Eksepsi
+                </a>
+                <a href="templates/analisis_sidang.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Menganalisis Pemeriksaan Sidang
+                </a>
+                <a href="templates/analisis_tuntutan.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Menganalisis Tuntutan
+                </a>
+                <a href="templates/duplik.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Membuat Duplik
+                </a>
+                <a href="templates/pembelaan.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Memandu Pembelaan
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Advokat Section -->
+    <section id="advokat" class="section py-5">
+        <div class="container">
+            <h2 class="text-center">Advokat</h2>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="img/advokat1.jpg" alt="MUHAMMAD RUDI, S.H">
+                        <h5>Andrian Boy, SH</h5>
+                        <p>081378007736</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="img/advokat2.jpg" alt="MUHAMMAD RUDI, S.H">
+                        <h5>SABRI, S.H</h5>
+                        <p>08116603660</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="img/advokat3.jpg" alt="MUHAMMAD RUDI, S.H">
+                        <h5>MUHAMMAD RUDI, S.H</h5>
+                        <p>081371950550</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="img/advokat1.jpg" alt="MUHAMMAD RUDI, S.H">
+                        <h5>Yandri valgo vandi</h5>
+                        <p>082368003010</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administrasi Section -->
+    <section id="administrasi" class="section py-5">
+        <div class="container">
+            <h2 class="text-event">Administrasi</h2>
+            <div class="list-group mt-5">
+                <a href="templates/surat_keberatan.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Formulir Permohonan Layanan Pos Bantuan Hukum
+                </a>
+                <a href="templates/analisis_sidang.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Surat Pernyataan tidak mampu membayar jasa advokat
+                </a>
+                <a href="templates/analisis_tuntutan.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Dokumentasi berkas
+                </a>
+                <a href="templates/duplik.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Surat Pernyataan bahwa Pos Bantuan Hukum Pengadilan Negeri Muaro telah memberikan hak-hak kepada Pemohon
+                </a>
+                <a href="templates/pembelaan.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Registrasi Layanan Pembebasan Biaya Perkara di Registrasi Perkara
+                </a>
+                <a href="templates/pembelaan.docx" class="list-group-item list-group-item-action" download>
+                    <i class="fa-solid fa-file-word me-2"></i> Registrasi Layanan Hukum Posbakum Pengadilan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengaduan Section -->
+    <section id="pengaduan" class="section text-center py-5">
+        <div class="container">
+            <h2 class="text-center">Pengaduan</h2>
+            <button type="button" class="btn btn-outline-light text-center mt-3">Download Dokumen Pengaduan</button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section py-5">
+        <div class="container">
+            <h2 class="text-event">FAQ</h2>
+
+            <div class="accordion mt-5" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Apa itu Sistem Informasi Pos Pelayanan Hukum di Pengadilan Negeri Muaro?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Sistem Informasi Pos Pelayanan Hukum di Pengadilan Negeri Muaro ini merupakan aplikasi berisikan:</p>
+                            <ul>
+                                <li>Layanan Pembebasan Biaya Perkara</li>
+                                <li>Sidang di Luar Pengadilan</li>
+                                <li>Posbakum (Pemberian informasi, Konsultasi, Pembuatan dokumen hukum, dan Pendampingan hukum)</li>
+                            </ul>
+                            <p>Dasar Hukum:</p>
+                            <ul>
+                                <li>Peraturan Mahkamah Agung Nomor 1 Tahun 2014</li>
+                                <li>Keputusan Direktur Jenderal Badan Peradilan Umum Nomor 52/DJU/SK/HK.006/5/Tahun 2014</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Bagaimana cara aksesibilitas ke Pos Pelayanan Hukum di Pengadilan Negeri Muaro?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Langkah-langkah untuk mengakses layanan Pos Pelayanan Hukum:</p>
+                            <ol>
+                                <li>Penggugat/Pemohon mengajukan permohonan tertulis</li>
+                                <li>Jika diterima, Ketua Pengadilan menetapkan layanan</li>
+                                <li>Jika ditolak, proses berjalan seperti biasa</li>
+                            </ol>
+                            <p>Mekanisme Pemberian Layanan Posbakum Pengadilan:</p>
+                            <ul>
+                                <li>Pemohon mengisi formulir dan menyerahkan dokumen</li>
+                                <li>Pemberi layanan menyusun berkas perkara</li>
+                                <li>Jika pemohon tidak mampu, akan diberikan formulir pembebasan biaya</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Kapan bisa mendapatkan pelayanan di Pos Pelayanan Hukum di Pengadilan Negeri Muaro?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sejak adanya penunjukan dari Hakim Ketua Majelis Perkara yang bersangkutan.
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Siapa yang ada di Pos Pelayanan Hukum di Pengadilan Negeri Muaro?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Pemberi layanan hukum meliputi Advokat, Sarjana Hukum, dan Sarjana Syari’ah dari Lembaga Pemberian
+                            Layanan Posbakum yang bekerjasama dengan Pengadilan.
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Kenapa harus ada Pos Pelayanan Hukum di Pengadilan Negeri Muaro?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Hak setiap orang yang tidak mampu secara ekonomi</li>
+                                <li>Hak setiap orang yang tidak memiliki akses pada informasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Apakah manfaat dengan adanya SI POSYANKUM PN MUARO ini?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Memudahkan pemohon karena prosesnya sederhana</li>
+                                <li>Pemohon tidak perlu datang langsung ke POSYANKUM PN MUARO</li>
+                                <li>Aplikasi tersedia di Playstore, sehingga dapat diakses kapan saja dan di mana saja</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Judges Section -->
+    <section class="section text-center py-5">
+        <div class="container">
+            <h2 class="mb-4 text-center">Chief Justice & Judges</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Hakim Budi Badu Andi">
+                        <h5>Hakim Budi Badu Andi</h5>
+                        <p>Hakim 1</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Hakim Budi Badu Andi">
+                        <h5>Hakim Budi Badu Andi</h5>
+                        <p>Hakim 2</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Hakim Budi Badu Andi">
+                        <h5>Hakim Budi Badu Andi</h5>
+                        <p>Hakim 3</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="judge-card">
+                        <img src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Hakim Budi Badu Andi">
+                        <h5>Hakim Budi Badu Andi</h5>
+                        <p>Hakim 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2025 Portal Pengadilan | <input type="text" placeholder="Cari..."> <button class="btn btn-success">Search</button></p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 50, // Adjust offset if needed
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
