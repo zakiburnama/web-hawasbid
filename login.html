@@ -50,10 +50,10 @@
         <h2>Login</h2>
         <form>
             <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email" required>
+                <input type="email" class="form-control" placeholder="Email" required id="username">
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" class="form-control" placeholder="Password" required id="password">
             </div>
             <div class="mb-3 form-check text-start">
                 <input type="checkbox" class="form-check-input">
@@ -68,8 +68,20 @@
 
     <script>
         function login(event) {
-            event.preventDefault();
-            window.location.href = 'index.html';
+            let username = document.getElementById("username").value.toLowerCase();
+            let password = document.getElementById("password").value.toLowerCase();
+            if (username == "hawasbid") {
+                event.preventDefault();
+                window.location.href = 'hawasbid.html';
+            }
+            else if ("posbakum") {
+                event.preventDefault();
+                window.location.href = 'posbakum.html';
+            }
+            else {
+                event.preventDefault();
+                window.location.href = 'index.html';
+            }
         }
     </script>
 
