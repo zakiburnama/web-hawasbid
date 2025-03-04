@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAWASBID - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-badge {
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .btn-update {
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+        
+        #profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light fixed-top bg-white shadow-sm p-3">
+        <!-- <nav class="navbar bg-body-tertiary fixed-top"> -->
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-landmark"></i>
+                <b>HAWASBID</b>
+            </a>
+            <input class="form-control w-25" type="search" placeholder="Search...">
+            <!-- <div class="dropdown">
+                <img id="profile-img" src="img/advokat1.jpg" alt="Profile">
+                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"></button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <img id="profile-img" src="img/advokat2.jpg" alt="Profile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">HAWASBID</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top:100px">
+
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Belum Ditinjak Lanjut</h5>
+                    <h2>24</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Proses Tindak Lanjut</h5>
+                    <h2>15</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Sudah Tindak Lanjut</h5>
+                    <h2>8</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-between mb-3">
+            <h5 class="fw-bold">Monitoring</h5>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDataModal">+ Add Data</button>
+        </div>
+
+        <div class="table-container">
+            <div class="d-flex justify-content-between mb-3">
+                <h5 class="fw-bold">Riwayat Monitoring</h5>
+                <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDataModal">+ Add Data</button> -->
+            </div>
+            <!-- Table -->
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Pengawas Bidang</th>
+                        <th>Tanggal Pengawasan</th>
+                        <th>Bagian</th>
+                        <th>Bukti</th>
+                        <th>Status</th>
+                        <th>Catatan Hakim Wasbid</th>
+                        <th>Bukti Tindak Lanjut</th>
+                        <th>Catatan WKPN</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>1</td>
+                        <td>Budi si pengawas</td>
+                        <td>01-03-2025</td>
+                        <td>Hawasbid Hukum</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td><span class="status-badge bg-warning">Belum</span></td>
+                        <td>Catatan Hakim Wasbid</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td>Catatan WKPN</td>
+                        <td><button class="btn btn-update">Update</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Andi si pengawas</td>
+                        <td>01-03-2025</td>
+                        <td>Hawasbid Pidana</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td><span class="status-badge bg-info">Proses</span></td>
+                        <td>Catatan Hakim Wasbid</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td>Catatan WKPN</td>
+                        <td><button class="btn btn-update">Update</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Wati si pengawas</td>
+                        <td>01-03-2025</td>
+                        <td>Hawasbid Perdata</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td><span class="status-badge bg-success text-light">Selesai</span></td>
+                        <td>Catatan Hakim Wasbid</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td>Catatan WKPN</td>
+                        <td><button class="btn btn-update">Update</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal for Adding Data -->
+    <div class="modal fade" id="addDataModal" tabindex="-1" aria-labelledby="addDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addDataModalLabel">Tambah Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addDataForm">
+                        <div class="mb-2">
+                            <label class="form-label">Nama Pengawas Bidang</label>
+                            <input type="text" class="form-control" id="namapengawas">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Tanggal Laporan</label>
+                            <input type="date" class="form-control" id="tanggalLaporan">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Bagian</label>
+                            <select class="form-select" id="bagian">
+                                <option value="Hukum">Hawasbid Hukum</option>
+                                <option value="Perdata">Hawasbid Perdata</option>
+                                <option value="Pidana">Hawasbid Pidana</option>
+                                <option value="Umum">Hawasbid Umum dan Keuangan</option>
+                                <option value="Kepegawaian">Hawasbid Kepegawaian</option>
+                                <option value="PTIP">Hawasbid PTIP</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Bukti</label>
+                            <input type="file" class="form-control" id="bukti">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="status">
+                                <option value="Belum">Belum</option>
+                                <option value="Proses">Proses</option>
+                                <option value="Selesai">Selesai</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Catatan Hakim Wasbid</label>
+                            <textarea class="form-control" id="catatanhakimhawasbid"></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Bukti</label>
+                            <input type="file" class="form-control" id="buktilanjutan">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Catatan WKPN</label>
+                            <textarea class="form-control" id="catatanwkpn"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="addData()">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addData() {
+            let tableBody = document.getElementById("tableBody");
+            let namapengawas = document.getElementById("namapengawas").value;
+            let tanggalLaporan = document.getElementById("tanggalLaporan").value;
+            let bagian = document.getElementById("bagian").value;
+            let bukti = document.getElementById("bukti").files[0] ? "<a href='#'>Lihat</a>" : "-";
+            let status = document.getElementById("status").value;
+            let catatanhakimhawasbid = document.getElementById("catatanhakimhawasbid").value;
+            let buktilanjutan = document.getElementById("buktilanjutan").files[0] ? "<a href='#'>Lihat</a>" : "-";
+            let catatanwkpn = document.getElementById("catatanwkpn").value;
+
+            let newRow = `<tr>
+                    <td>${tableBody.rows.length + 3}</td>
+                    <td>${namapengawas}</td>
+                    <td>${tanggalLaporan}</td>
+                    <td>${bagian}</td>
+                    <td>${bukti}</td>
+                    <td><span class="status-badge bg-warning">${status}</span></td>
+                    <td>${catatanhakimhawasbid}</td>
+                    <td>${buktilanjutan}</td>
+                    <td>${catatanwkpn}</td>
+                    <td><button class='btn btn-update'>Update</button></td>
+                </tr>`;
+
+            tableBody.innerHTML += newRow;
+            document.getElementById("addDataForm").reset();
+            let modal = bootstrap.Modal.getInstance(document.getElementById('addDataModal'));
+            modal.hide();
+        }
+    </script>
+</body>
+
+</html>
