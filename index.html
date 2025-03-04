@@ -63,7 +63,7 @@
             </div> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <img id="profile-img" src="img/advokat1.jpg" alt="Profile">
+                <img id="profile-img" src="img/advokat2.jpg" alt="Profile">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -76,22 +76,38 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Dropdown
+                                Hawasbid Kepaniteraan
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
+                                <li><a class="dropdown-item" href="#">Hawasbid Hukum</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid Pidana</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid Perdata</a></li>
+                                <!-- <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="posbakum.html">go to POSBAKUM</a></li>
+                                <li><a class="dropdown-item" href="posbakum.html">go to POSBAKUM</a></li> -->
                             </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hawasbid Kesekretariatan
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Hawasbid Umum dan Keuangan</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid Kepegawaian</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid PTIP</a></li>
+
+                                <!-- <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="posbakum.html">go to POSBAKUM</a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Bagian Yang Diawasi</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.html">Logout</a>
@@ -107,32 +123,32 @@
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="card p-3">
-                    <h5>Pending Cases</h5>
+                    <h5>Belum Ditinjak Lanjut</h5>
                     <h2>24</h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card p-3">
-                    <h5>Completed Cases</h5>
+                    <h5>Proses Tindak Lanjut</h5>
                     <h2>15</h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card p-3">
-                    <h5>Lawyers</h5>
+                    <h5>Sudah Tindak Lanjut</h5>
                     <h2>8</h2>
                 </div>
             </div>
         </div>
         
         <div class="d-flex justify-content-between mb-3">
-            <h5 class="fw-bold">Monitoring Reports</h5>
+            <h5 class="fw-bold">Monitoring</h5>
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDataModal">+ Add Data</button>
         </div>
 
         <div class="table-container">
             <div class="d-flex justify-content-between mb-3">
-                <h5 class="fw-bold">Life Data Monitoring</h5>
+                <h5 class="fw-bold">Riwayat Monitoring</h5>
                 <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDataModal">+ Add Data</button> -->
             </div>
             <!-- Table -->
@@ -140,34 +156,52 @@
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
-                        <th>Pengawasan</th>
+                        <th>Nama Pengawas Bidang</th>
                         <th>Tanggal Laporan</th>
-                        <th>Lokasi</th>
+                        <th>Bagian</th>
                         <th>Bukti</th>
                         <th>Status</th>
-                        <th>Tanggapan</th>
+                        <th>Catatan Hakim Wasbid</th>
+                        <th>Bukti Tindak Lanjut</th>
+                        <th>Catatan WKPN</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
                     <tr>
                         <td>1</td>
-                        <td>Monitoring 1</td>
+                        <td>Budi si pengawas</td>
                         <td>01-03-2025</td>
-                        <td>Jakarta</td>
+                        <td>Hawasbid Hukum</td>
                         <td><a href="#" class="text-primary">View</a></td>
-                        <td><span class="status-badge bg-warning">Pending</span></td>
-                        <td>Under Review</td>
+                        <td><span class="status-badge bg-warning">Belum</span></td>
+                        <td>Catatan Hakim Wasbid</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td>Catatan WKPN</td>
                         <td><button class="btn btn-update">Update</button></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Monitoring 2</td>
+                        <td>Andi si pengawas</td>
                         <td>01-03-2025</td>
-                        <td>Jakarta</td>
+                        <td>Hawasbid Pidana</td>
                         <td><a href="#" class="text-primary">View</a></td>
-                        <td><span class="status-badge bg-warning">Pending</span></td>
-                        <td>Under Review</td>
+                        <td><span class="status-badge bg-info">Proses</span></td>
+                        <td>Catatan Hakim Wasbid</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td>Catatan WKPN</td>
+                        <td><button class="btn btn-update">Update</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Wati si pengawas</td>
+                        <td>01-03-2025</td>
+                        <td>Hawasbid Perdata</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td><span class="status-badge bg-success text-light">Selesai</span></td>
+                        <td>Catatan Hakim Wasbid</td>
+                        <td><a href="#" class="text-primary">View</a></td>
+                        <td>Catatan WKPN</td>
                         <td><button class="btn btn-update">Update</button></td>
                     </tr>
                 </tbody>
@@ -186,16 +220,23 @@
                 <div class="modal-body">
                     <form id="addDataForm">
                         <div class="mb-2">
-                            <label class="form-label">Pengawasan</label>
-                            <input type="text" class="form-control" id="pengawasan">
+                            <label class="form-label">Nama Pengawas Bidang</label>
+                            <input type="text" class="form-control" id="namapengawas">
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Tanggal Laporan</label>
                             <input type="date" class="form-control" id="tanggalLaporan">
                         </div>
                         <div class="mb-2">
-                            <label class="form-label">Lokasi</label>
-                            <input type="text" class="form-control" id="lokasi">
+                            <label class="form-label">Bagian</label>
+                            <select class="form-select" id="bagian">
+                                <option value="Hukum">Hawasbid Hukum</option>
+                                <option value="Perdata">Hawasbid Perdata</option>
+                                <option value="Pidana">Hawasbid Pidana</option>
+                                <option value="Umum">Hawasbid Umum dan Keuangan</option>
+                                <option value="Kepegawaian">Hawasbid Kepegawaian</option>
+                                <option value="PTIP">Hawasbid PTIP</option>
+                            </select>
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Bukti</label>
@@ -204,14 +245,22 @@
                         <div class="mb-2">
                             <label class="form-label">Status</label>
                             <select class="form-select" id="status">
-                                <option value="Pending">Pending</option>
+                                <option value="Belum">Belum</option>
                                 <option value="Proses">Proses</option>
                                 <option value="Selesai">Selesai</option>
                             </select>
                         </div>
                         <div class="mb-2">
-                            <label class="form-label">Tanggapan</label>
-                            <textarea class="form-control" id="tanggapan"></textarea>
+                            <label class="form-label">Catatan Hakim Wasbid</label>
+                            <textarea class="form-control" id="catatanhakimhawasbid"></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Bukti</label>
+                            <input type="file" class="form-control" id="buktilanjutan">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Catatan WKPN</label>
+                            <textarea class="form-control" id="catatanwkpn"></textarea>
                         </div>
                         <button type="button" class="btn btn-primary" onclick="addData()">Simpan</button>
                     </form>
@@ -223,21 +272,25 @@
     <script>
         function addData() {
             let tableBody = document.getElementById("tableBody");
-            let pengawasan = document.getElementById("pengawasan").value;
+            let namapengawas = document.getElementById("namapengawas").value;
             let tanggalLaporan = document.getElementById("tanggalLaporan").value;
-            let lokasi = document.getElementById("lokasi").value;
+            let bagian = document.getElementById("bagian").value;
             let bukti = document.getElementById("bukti").files[0] ? "<a href='#'>Lihat</a>" : "-";
             let status = document.getElementById("status").value;
-            let tanggapan = document.getElementById("tanggapan").value;
+            let catatanhakimhawasbid = document.getElementById("catatanhakimhawasbid").value;
+            let buktilanjutan = document.getElementById("buktilanjutan").files[0] ? "<a href='#'>Lihat</a>" : "-";
+            let catatanwkpn = document.getElementById("catatanwkpn").value;
 
             let newRow = `<tr>
-                    <td>${tableBody.rows.length + 1}</td>
-                    <td>${pengawasan}</td>
+                    <td>${tableBody.rows.length + 3}</td>
+                    <td>${namapengawas}</td>
                     <td>${tanggalLaporan}</td>
-                    <td>${lokasi}</td>
+                    <td>${bagian}</td>
                     <td>${bukti}</td>
                     <td><span class="status-badge bg-warning">${status}</span></td>
-                    <td>${tanggapan}</td>
+                    <td>${catatanhakimhawasbid}</td>
+                    <td>${buktilanjutan}</td>
+                    <td>${catatanwkpn}</td>
                     <td><button class='btn btn-update'>Update</button></td>
                 </tr>`;
 
