@@ -32,7 +32,7 @@
             border-radius: 20px;
             padding: 5px 15px;
         }
-        
+
         #profile-img {
             width: 40px;
             height: 40px;
@@ -66,7 +66,8 @@
                 <img id="profile-img" src="img/advokat2.jpg" alt="Profile">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">HAWASBID</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -107,7 +108,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="d-flex justify-content-between mb-3">
             <h5 class="fw-bold">Monitoring</h5>
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDataModal">+ Add Data</button>
@@ -128,7 +129,8 @@
                         <th>Bagian</th>
                         <th>Bukti</th>
                         <th>Status</th>
-                        <th>Catatan Hakim Wasbid</th>
+                        <th>Catatan Hawasbid</th>
+                        <th>Catatan Kepaniteraan</th>
                         <th>Bukti Tindak Lanjut</th>
                         <th>Catatan WKPN</th>
                         <th>Aksi</th>
@@ -142,7 +144,8 @@
                         <td>Hawasbid Hukum</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td><span class="status-badge bg-warning">Belum</span></td>
-                        <td>Catatan Hakim Wasbid</td>
+                        <td>Catatan Hawasbid</td>
+                        <td>Catatan Kepaniteraan</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td>Catatan WKPN</td>
                         <td><button class="btn btn-update">Update</button></td>
@@ -154,7 +157,8 @@
                         <td>Hawasbid Pidana</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td><span class="status-badge bg-info">Proses</span></td>
-                        <td>Catatan Hakim Wasbid</td>
+                        <td>Catatan Hawasbid</td>
+                        <td>Catatan Kepaniteraan</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td>Catatan WKPN</td>
                         <td><button class="btn btn-update">Update</button></td>
@@ -166,7 +170,8 @@
                         <td>Hawasbid Perdata</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td><span class="status-badge bg-success text-light">Selesai</span></td>
-                        <td>Catatan Hakim Wasbid</td>
+                        <td>Catatan Hawasbid</td>
+                        <td>Catatan Kepaniteraan</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td>Catatan WKPN</td>
                         <td><button class="btn btn-update">Update</button></td>
@@ -222,6 +227,10 @@
                             <textarea class="form-control" id="catatanhakimhawasbid"></textarea>
                         </div>
                         <div class="mb-2">
+                            <label class="form-label">Catatan Hakim Kepaniteraan</label>
+                            <textarea class="form-control" id="catatanhakimkepaniteraan"></textarea>
+                        </div>
+                        <div class="mb-2">
                             <label class="form-label">Bukti</label>
                             <input type="file" class="form-control" id="buktilanjutan">
                         </div>
@@ -245,6 +254,7 @@
             let bukti = document.getElementById("bukti").files[0] ? "<a href='#'>Lihat</a>" : "-";
             let status = document.getElementById("status").value;
             let catatanhakimhawasbid = document.getElementById("catatanhakimhawasbid").value;
+            let catatanhakimkepaniteraan = document.getElementById("catatanhakimkepaniteraan").value;
             let buktilanjutan = document.getElementById("buktilanjutan").files[0] ? "<a href='#'>Lihat</a>" : "-";
             let catatanwkpn = document.getElementById("catatanwkpn").value;
 
@@ -256,6 +266,7 @@
                     <td>${bukti}</td>
                     <td><span class="status-badge bg-warning">${status}</span></td>
                     <td>${catatanhakimhawasbid}</td>
+                    <td>${catatanhakimkepaniteraan}</td>
                     <td>${buktilanjutan}</td>
                     <td>${catatanwkpn}</td>
                     <td><button class='btn btn-update'>Update</button></td>
