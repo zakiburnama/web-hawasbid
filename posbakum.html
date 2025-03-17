@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+
+
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         html {
@@ -241,15 +246,15 @@
                     <h4 class="text-center">Permohonan</h4>
                     <div class="list-group mt-3">
                         <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Wali</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Pengampuan</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Dispensasi Nikah</a>
+                        <a href="documents/DRAF PERMOHONAN PENETAPAN PENGAMPUAN.docx" download="PENGAMPUAN" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Pengampuan</a>
+                        <a href="documents/DRAF PERMOHONAN PENETAPAN NIKAH TERLABAT.docx" download="NIKAH TERLABAT" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Dispensasi Nikah</a>
                         <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Izin Nikah</a>
                         <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pembatalan Perkawinan</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Anak</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Untuk Memperbaiki Kesalahan dalam Akta Catatan Sipil</a>
+                        <a href="documents/DRAF PERMOHONAN PENGANGKATAN ANAK.docx" download="PENGANGKATAN ANAK" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Pengangkatan Anak</a>
+                        <a href="documents/DRAF PENGGANTIAN NAMA.docx" download="PENGGANTIAN NAMA" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Untuk Memperbaiki Kesalahan dalam Akta Catatan Sipil</a>
                         <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Penetapan atas penunjukan Wasit</a>
                         <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Agar Seseorang Dinyatakan Tidak Hadir/Meninggal</a>
-                        <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Agar Ditetapkan Sebagai
+                        <a href="documents/DRAF PERMOHONAN PENETAPAN PERWALIAN IZIN MENJUAL.docx" download="PERWALIAN IZIN MENJUAL" class="list-group-item list-group-item-action"><i class="fa-solid fa-file-word me-2"></i>Membuat Permohonan Agar Ditetapkan Sebagai
                             Wakil/Kuasa</a>
                     </div>
                 </div>
@@ -281,36 +286,173 @@
         </div>
     </section>
 
-
-    <!-- Advokat Section -->
-    <section id="advokat" class="section py-5">
-        <div class="container">
-            <h2 class="text-center">Advokat</h2>
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <div class="judge-card">
-                        <img src="img/advokat1.jpg" alt="SABRI, S.H">
-                        <h5>SABRI, S.H</h5>
-                        <p>081378007736</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="judge-card">
-                        <img src="img/advokat2.jpg" alt="Andrian Boy, SH">
-                        <h5>Andrian Boy, SH</h5>
-                        <p>081378007736</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="judge-card">
-                        <img src="img/advokat3.jpg" alt="Yandri Valgo Vandi">
-                        <h5>Yandri Valgo Vandi</h5>
-                        <p>082368003010</p>
-                    </div>
+<!-- Advokat Section -->
+<section id="advokat" class="section py-5">
+    <div class="container">
+        <h2 class="text-center">Advokat</h2>
+        <div class="row mt-5">
+            <!-- Advokat Cards 1 -->
+            <div class="col-md-3">
+                <div class="judge-card" onclick="showAdvokatDetails('SABRI, S.H', '23 03867', 'S1 Hukum', 'img/advokat1.jpg',
+                    [
+                        {role: 'Auditor Koperasi (KSP) Bersaudara Jaya', year: '2012 s/d 2015'},
+                        {role: 'Kepala Gudang PT Minang Media Marana', year: '2016 s/d 2018'},
+                        {role: 'Legal Hukum PT. Minang Media Sarana', year: '2018 s/d 2023'},
+                        {role: 'Advokat Kantor Hukum Shirath Law Firm', year: '2023 s/d Sekarang'},
+                        {role: 'Direktur Organisasi Bantuan (OBH)', year: '2024 s/d Sekarang'},
+                        {role: 'Ketua Pos Pelayanan Bantuan Hukum Pengadilan Negeri Pasaman Barat', year: '2024 s/d Sekarang'}
+                    ],
+                    [
+                        {training: 'Pelatihan kepemimpinan & mubaligh muda', year: '2009'},
+                        {training: 'Pelatihan klinik etik dan advokasi', year: '2023'},
+                        {training: 'Pendidikan Khusus Profesi Advokat', year: '2023'},
+                        {training: 'Pelatihan Pendidikan Mediator', year: '2023'}
+                    ],
+                    'Jalan Nusa Indah Perumahan Griya Lingkin Permai, Desa/Kel Aia Gadang Timur, Kecamatan Pasaman, Kabupaten Pasaman Barat',
+                    '0811-6603-660',
+                    'aljihatlaw@gmail.com')">
+                    <img src="img/advokat1.jpg" alt="SABRI, S.H">
+                    <h5>SABRI, S.H</h5>
+                    <p>081378007736</p>
                 </div>
             </div>
+            <!-- Advokat Cards 2 -->
+            <div class="col-md-3">
+                <div class="judge-card" onclick="showAdvokatDetails('MUHAMMAD RUDI, S.H', '23. 03856', 'S1 Hukum', 'img/advokat2.jpg',
+                                [
+                                    {role: 'Staf Hukum Notaris Rustim Afandi, S.H,Spn', year: '2009 s/d 2023'},
+                                    {role: ' Advokat Kantor Shirath Law Firm', year: '2023 s/d sekarang'},
+                                    {role: 'Anggota Pos Pelayanan Bantuan Hukum Pengadilan Negeri Pasaman Barat', year: '2023 s/d sekarang'}
+                                ],
+                                [
+                                    {training: 'Pendidikan Khusus Profesi Advokat', year: '2023'},
+                                    {training: 'Pendidikan Mediator', year: '2023'}
+                                ],
+                                'Jalan Nusa Indah Perumahan Griya Lingkin Permai, Desa/Kel Aia Gadang Timur, Kecamatan Pasaman, Kabupaten Pasaman Barat',
+                                '081371950550',
+                                'shirathlawfirm@gmail.com')">
+                    <img src="img/advokat2.jpg" alt="MUHAMMAD RUDI, S.H">
+                    <h5>MUHAMMAD RUDI, S.H</h5>
+                    <p>081371950550</p>
+                </div>
+            </div>
+            <!-- Advokat Cards 3 -->
+            <div class="col-md-3">
+                <div class="judge-card" onclick="showAdvokatDetails('YANDRI VALGO VANDI, S.H', '24. 10262', 'S1 Hukum', 'img/advokat3.jpg',
+                                [
+                                    {role: 'Advokat Kantor Hukum Valgo', year: ' 2024 s.d Sekarang'},
+                                    {role: 'Anggota pos pelayana bantuan hukum pengadilan negeri pasaman barat', year: '2024 s/d Sekarang'}
+                                ],
+                                [
+                                    {training: 'Pendiddikan Khusus Profesi Advokat', year: '2023'}
+                                ],
+                                'Jln Tuangku Buya Sasak Kapar',
+                                '082368003010',
+                                'yandrivalgo@gmail.com')">
+                    <img src="img/advokat3.jpg" alt="SABRI, S.H">
+                    <h5>YANDRI VALGO VANDI, S.H</h5>
+                    <p>082368003010</p>
+                </div>
+            </div>
+            <!-- Advokat Cards 4 -->
+            <div class="col-md-3">
+                <div class="judge-card" onclick="showAdvokatDetails('ANDRIAN BOY, S.H', '01. 002076', 'S1 Hukum', 'img/advokat4.jpg',
+                                [
+                                    {role: 'Advokat Kantor Hukum Andrian Boy', year: ' 2021 s.d Sekarang'},
+                                    {role: 'Anggota Pos Pelayanan Bantuan Hukum Pengadilan Negeri Pasaman Barat', year: '2024 s/d sekarang'}
+                                ],
+                                [
+                                    {training: 'Pendiddikan Khusus Profesi Advokat', year: '2021'}
+                                ],
+                                'Jln.Simpang Empat Kinali -Padang',
+                                '081378007736',
+                                'andrianboy@gmail.com')">
+                    <img src="img/advokat4.jpg" alt="SABRI, S.H">
+                    <h5>ANDRIAN BOY, S.H</h5>
+                    <p>081378007736</p>
+                </div>
+            </div>
+            <!-- You can add more Advokats following this structure -->
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Bootstrap Modal for Advokat Details -->
+<div class="modal fade" id="advokatModal" tabindex="-1" aria-labelledby="advokatModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="advokatModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <img id="advokatImage" src="" class="img-fluid rounded-circle mb-3" width="150">
+                    <h5 id="advokatName"></h5>
+                    <p id="advokatLicense"></p>
+                    <p id="advokatEducation"></p>
+                </div>
+                <hr>
+                <h6><strong>Perjalanan Karier</strong></h6>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Posisi</th>
+                            <th>Tahun</th>
+                        </tr>
+                    </thead>
+                    <tbody id="careerTable"></tbody>
+                </table>
+                <h6><strong>Pelatihan</strong></h6>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Pelatihan</th>
+                            <th>Tahun</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trainingTable"></tbody>
+                </table>
+                <h6><strong>Alamat Kantor</strong></h6>
+                <p id="advokatAddress"></p>
+                <h6><strong>Kontak</strong></h6>
+                <p id="advokatPhone"></p>
+                <p id="advokatEmail"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to Handle Modal -->
+<script>
+    function showAdvokatDetails(name, license, education, image, career, training, address, phone, email) {
+        document.getElementById("advokatModalLabel").innerText = name;
+        document.getElementById("advokatName").innerText = name;
+        document.getElementById("advokatLicense").innerText = "Nomor Induk Advokat: " + license;
+        document.getElementById("advokatEducation").innerText = "Pendidikan: " + education;
+        document.getElementById("advokatImage").src = image;
+        document.getElementById("advokatAddress").innerText = address;
+        document.getElementById("advokatPhone").innerText = "Nomor Kontak: " + phone;
+        document.getElementById("advokatEmail").innerText = "Email: " + email;
+
+        let careerTable = document.getElementById("careerTable");
+        careerTable.innerHTML = "";
+        career.forEach(item => {
+            careerTable.innerHTML += `<tr><td>${item.role}</td><td>${item.year}</td></tr>`;
+        });
+
+        let trainingTable = document.getElementById("trainingTable");
+        trainingTable.innerHTML = "";
+        training.forEach(item => {
+            trainingTable.innerHTML += `<tr><td>${item.training}</td><td>${item.year}</td></tr>`;
+        });
+
+        var advokatModal = new bootstrap.Modal(document.getElementById("advokatModal"));
+        advokatModal.show();
+    }
+</script>
+
+
 
     <!-- Administrasi Section -->
     <section id="administrasi" class="section py-5">
@@ -496,7 +638,7 @@
         });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
