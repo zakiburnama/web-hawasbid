@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .profile-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .timeline {
+            border-left: 3px solid #6c757d;
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #6c757d;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="profile-card p-4 shadow">
+            <img src="img/profile.png" width="250" class="rounded-circle mb-3" alt="Profile Picture">
+            <h4 id="profileName">John Doe</h4>
+            <p>Registration Date: <span id="regDate">01-01-2024</span></p>
+            <p>Location: <span id="location">New York, USA</span></p>
+            <p>Email: <span id="email">johndoe@example.com</span></p>
+            <p>Phone: <span id="phone">+1 234 567 890</span></p>
+        </div>
+
+        <div class="mt-4 p-4 bg-white shadow rounded">
+            <h5>Activity History</h5>
+            <div class="timeline" id="activityTimeline">
+                <!-- Activities will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const activities = JSON.parse(localStorage.getItem("userActivities")) || [];
+            const timeline = document.getElementById("activityTimeline");
+
+            activities.forEach(activity => {
+                const activityItem = document.createElement("div");
+                activityItem.classList.add("timeline-item");
+                activityItem.innerHTML = `<p><strong>${activity.action}</strong> on ${activity.date}</p>`;
+                timeline.appendChild(activityItem);
+            });
+        });
+    </script>
+</body>
+
+</html>
