@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f4f5f7;
+        }
+
+        .profile-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #ccc;
+        }
+
+        .timeline-item {
+            padding-left: 40px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '\2022';
+            position: absolute;
+            left: 8px;
+            font-size: 20px;
+            color: #ccc;
+        }
+
+        .timeline-item.completed::before {
+            content: '\2713';
+            color: green;
+        }
+
+        .timeline-item.current::before {
+            content: '\25CF';
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light fixed-top bg-white shadow-sm p-3">
+        <!-- <nav class="navbar bg-body-tertiary fixed-top"> -->
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <!-- <img id="logo-img" src="img/simonha_logo.png" width="150" alt="Logo"> -->
+                <i class="fa-solid fa-landmark"></i>
+                <b>SIMONHA PADANG</b>
+            </a>
+            <input class="form-control w-25" type="search" placeholder="Search...">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <img id="profile-img" src="img/profile.png" width="40" alt="Profile">
+                <!-- <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a> -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <img id="simonha_logo" src="img/simonha_logo.png" width="150" alt="simonha_logo">
+                    <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SIMONHA PADANG</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="profile.html">Profile</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Hawasbid Kepaniteraan
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Hawasbid Hukum</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid Pidana</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid Perdata</a></li>
+                                <!-- <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="posbakum.html">go to POSBAKUM</a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Hawasbid Kesekretariatan
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Hawasbid Umum dan Keuangan</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid Kepegawaian</a></li>
+                                <li><a class="dropdown-item" href="#">Hawasbid PTIP</a></li>
+    
+                                <!-- <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="posbakum.html">go to POSBAKUM</a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Bagian Yang Diawasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container" style="margin-top:100px">
+        <div class="profile-container p-4">
+            <div class="d-flex align-items-center">
+                <img src="img/profile.png" width="250" class="rounded-circle me-3" alt="Profile Picture">
+                <div>
+                    <h4 class="fw-bold">John Doe</h4>
+                    <p>Registered: Jan 15, 2024</p>
+                    <p>Email: johndoe@example.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div>
+                        <i class="fab fa-facebook me-2"></i>
+                        <i class="fab fa-twitter me-2"></i>
+                        <i class="fab fa-linkedin me-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-container mt-4 p-4">
+            <h5 class="fw-bold">Activity History</h5>
+            <ul class="timeline">
+                <li class="timeline-item completed">Added new monitoring data on Mar 15, 2025</li>
+                <li class="timeline-item current">Updated status on Mar 16, 2025</li>
+                <li class="timeline-item">Reviewed a report on Mar 18, 2025</li>
+                <li class="timeline-item">Closed a case on Mar 20, 2025</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
