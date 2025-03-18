@@ -76,7 +76,13 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile2.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="employee.html">Employees</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -160,6 +166,7 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Pengawas Bidang</th>
+                        <th>Nama</th>
                         <th>Tanggal Pengawasan</th>
                         <th>Bagian</th>
                         <th>Bukti</th>
@@ -176,6 +183,7 @@
                     <tr>
                         <td>1</td>
                         <td>Budi si pengawas</td>
+                        <td>Bunga si pemeriksa</td>
                         <td>01-03-2025</td>
                         <td>Hawasbid Hukum</td>
                         <td><a href="#" class="text-primary">View</a></td>
@@ -185,11 +193,12 @@
                         <td>Catatan Kesekretariatan</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td>Catatan WKPN</td>
-                        <td><button class="btn btn-update" data-bs-toggle="modal" data-bs-target="#addDataModal">Update</button></td>
+                        <td><button class="btn btn-update" onclick="editRow(this)">Update</button></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Andi si pengawas</td>
+                        <td>Bunga si pemeriksa</td>
                         <td>01-03-2025</td>
                         <td>Hawasbid Pidana</td>
                         <td><a href="#" class="text-primary">View</a></td>
@@ -199,11 +208,12 @@
                         <td>Catatan Kesekretariatan</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td>Catatan WKPN</td>
-                        <td><button class="btn btn-update" data-bs-toggle="modal" data-bs-target="#addDataModal">Update</button></td>
+                        <td><button class="btn btn-update" onclick="editRow(this)">Update</button></td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>Wati si pengawas</td>
+                        <td>Bunga si pemeriksa</td>
                         <td>01-03-2025</td>
                         <td>Hawasbid Perdata</td>
                         <td><a href="#" class="text-primary">View</a></td>
@@ -213,7 +223,7 @@
                         <td>Catatan Kesekretariatan</td>
                         <td><a href="#" class="text-primary">View</a></td>
                         <td>Catatan WKPN</td>
-                        <td><button class="btn btn-update" data-bs-toggle="modal" data-bs-target="#addDataModal">Update</button></td>
+                        <td><button class="btn btn-update" onclick="editRow(this)">Update</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -233,6 +243,10 @@
                         <div class="mb-2">
                             <label class="form-label">Nama Pengawas Bidang</label>
                             <input type="text" class="form-control" id="namapengawas">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama">
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Tanggal Laporan</label>
@@ -274,7 +288,7 @@
                             <textarea class="form-control" id="catatanhakimkesekretariatan"></textarea>
                         </div>
                         <div class="mb-2">
-                            <label class="form-label">Bukti</label>
+                            <label class="form-label">Bukti Tindak Lanjut</label>
                             <input type="file" class="form-control" id="buktilanjutan">
                         </div>
                         <div class="mb-2">
@@ -288,10 +302,61 @@
         </div>
     </div>
 
+    <!-- Modal for Adding and Editing Data -->
+    <div class="modal fade" id="editDataModal" tabindex="-1" aria-labelledby="editDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editDataModalLabel">Edit Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editDataForm">
+                        <input type="hidden" id="editRowIndex">
+                        <div class="mb-2">
+                            <label class="form-label">Nama Pengawas Bidang</label>
+                            <input type="text" class="form-control" id="editNamaPengawas">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Nama Pemeriksa</label>
+                            <input type="text" class="form-control" id="editNamaPemeriksa">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Tanggal Laporan</label>
+                            <input type="date" class="form-control" id="editTanggalLaporan">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Bagian</label>
+                            <select class="form-select" id="editBagian">
+                                <option value="Hukum">Hawasbid Hukum</option>
+                                <option value="Perdata">Hawasbid Perdata</option>
+                                <option value="Pidana">Hawasbid Pidana</option>
+                                <option value="Umum">Hawasbid Umum dan Keuangan</option>
+                                <option value="Kepegawaian">Hawasbid Kepegawaian</option>
+                                <option value="PTIP">Hawasbid PTIP</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Catatan Hakim Wasbid</label>
+                            <textarea class="form-control" id="editcatatanhakimhawasbid"></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Bukti Tindak Lanjut</label>
+                            <input type="file" class="form-control" id="editbuktilanjutan">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="updateRow()">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
     <script>
         function addData() {
             let tableBody = document.getElementById("tableBody");
             let namapengawas = document.getElementById("namapengawas").value;
+            let nama = document.getElementById("nama").value;
             let tanggalLaporan = document.getElementById("tanggalLaporan").value;
             let bagian = document.getElementById("bagian").value;
             let bukti = document.getElementById("bukti").files[0] ? "<a href='#'>Lihat</a>" : "-";
@@ -305,6 +370,7 @@
             let newRow = `<tr>
                     <td>${tableBody.rows.length + 1}</td>
                     <td>${namapengawas}</td>
+                    <td>${nama}</td>
                     <td>${tanggalLaporan}</td>
                     <td>${bagian}</td>
                     <td>${bukti}</td>
@@ -314,7 +380,7 @@
                     <td>${catatanhakimkesekretariatan}</td>
                     <td>${buktilanjutan}</td>
                     <td>${catatanwkpn}</td>
-                    <td><button class='btn btn-update' data-bs-toggle="modal" data-bs-target="#addDataModal">Update</button></td>
+                    <td><button class='btn btn-update' onclick="editRow(this)"">Update</button></td>
                 </tr>`;
 
             tableBody.innerHTML += newRow;
@@ -327,10 +393,13 @@
                     let row = button.parentElement.parentElement;
                     document.getElementById("editRowIndex").value = row.rowIndex - 1;
                     document.getElementById("editNamaPengawas").value = row.cells[1].innerText;
-                    document.getElementById("editTanggalLaporan").value = row.cells[2].innerText;
-                    document.getElementById("editBagian").value = row.cells[3].innerText;
+                    document.getElementById("editNamaPemeriksa").value = row.cells[2].innerText;
+                    document.getElementById("editTanggalLaporan").value = row.cells[3].innerText;
+                    document.getElementById("editBagian").value = row.cells[4].innerText;
+                    document.getElementById("editcatatanhakimhawasbid").value = row.cells[7].innerText;
+                    // document.getElementById("editbuktilanjutan").value = row.cells[6].innerText;
 
-                    let modal = new bootstrap.Modal(document.getElementById('addDataModal'));
+                    let modal = new bootstrap.Modal(document.getElementById('editDataModal'));
                     modal.show();
                 }
 
@@ -340,10 +409,12 @@
                     let row = table.rows[rowIndex];
 
                     row.cells[1].innerText = document.getElementById("editNamaPengawas").value;
-                    row.cells[2].innerText = document.getElementById("editTanggalLaporan").value;
-                    row.cells[3].innerText = document.getElementById("editBagian").value;
+                    row.cells[2].innerText = document.getElementById("editNamaPemeriksa").value;
+                    row.cells[3].innerText = document.getElementById("editTanggalLaporan").value;
+                    row.cells[4].innerText = document.getElementById("editBagian").value;
+                    row.cells[7].innerText = document.getElementById("editcatatanhakimhawasbid").value;
 
-                    let modal = bootstrap.Modal.getInstance(document.getElementById('addDataModal'));
+                    let modal = bootstrap.Modal.getInstance(document.getElementById('editDataModal'));
                     modal.hide();
                 }
 
